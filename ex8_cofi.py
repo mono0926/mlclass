@@ -58,7 +58,7 @@ def part2_1():
 	mat = scipy.io.loadmat('/Users/saburookita/Downloads/mlclass-ex8-004/mlclass-ex8/ex8_movies.mat')
 	Y, R = mat['Y'], mat['R']
 
-	print mean( extract ( Y[0,:] * R[0,:] > 0, Y[0, :] ) )
+	print(mean( extract ( Y[0,:] * R[0,:] > 0, Y[0, :] ) ))
 
 	pyplot.imshow( Y )
 	pyplot.ylabel( 'Movies' )
@@ -87,10 +87,10 @@ def part2_2():
 
 
 	params = r_[X.T.flatten(), theta.T.flatten()]
-	print cofiCostFunc( params, Y, R, num_users, num_movies, num_features, 0 )
-	print cofiGradFunc( params, Y, R, num_users, num_movies, num_features, 0 )
-	print cofiCostFunc( params, Y, R, num_users, num_movies, num_features, 1.5 )
-	print cofiGradFunc( params, Y, R, num_users, num_movies, num_features, 1.5 )
+	print(cofiCostFunc( params, Y, R, num_users, num_movies, num_features, 0 ))
+	print(cofiGradFunc( params, Y, R, num_users, num_movies, num_features, 0 ))
+	print(cofiCostFunc( params, Y, R, num_users, num_movies, num_features, 1.5 ))
+	print(cofiGradFunc( params, Y, R, num_users, num_movies, num_features, 1.5 ))
 
 
 def part2_3():
@@ -149,7 +149,7 @@ def part2_3():
 
 	for i in range(0, 10):
 		j = idx[i, 0]
-		print "Predicting rating %.1f for movie %s" % (my_prediction[j], movies[j])
+		print("Predicting rating %.1f for movie %s" % (my_prediction[j], movies[j]))
 
 
 

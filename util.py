@@ -211,8 +211,8 @@ class TestUtil(unittest.TestCase):
 		self.assertEqual( Util.sigmoid( 0 ), 0.5 )
 		
 def main():
-	print Util.sigmoid( array([0, 0, 1]) )
-	print Util.sigmoidGradient( array([0, 0, 1]) )
+	print(Util.sigmoid( array([0, 0, 1]) ))
+	print(Util.sigmoidGradient( array([0, 0, 1]) ))
 
 	# y = array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 	# print Util.recodeLabel( y, 10 )

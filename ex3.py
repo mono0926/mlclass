@@ -43,7 +43,7 @@ def displayData( X, theta = None ):
 			result_matrix.append( result )
 
 		result_matrix = array( result_matrix ).reshape( rows, cols ).transpose()
-		print result_matrix
+		print(result_matrix)
 
 	pyplot.show( )
 
@@ -78,7 +78,7 @@ def oneVsAll( X, y, num_classes, lamda ):
 		result 			= scipy.optimize.fmin_cg( computeCost, fprime=gradientCost, x0=theta, \
 												  args=(X, temp_y, lamda), maxiter=50, disp=False, full_output=True )
 		all_theta[:, k] = result[0]
-		print "%d Cost: %.5f" % (k+1, result[1])
+		print("%d Cost: %.5f" % (k+1, result[1]))
 
 	# save( "all_theta.txt", all_theta )
 	return all_theta
@@ -94,7 +94,7 @@ def predictOneVsAll( theta, X, y ):
 		# print "prediction = %d actual = %d" % (prediction, actual)
 		if actual == prediction:
 			correct += 1
-	print "Accuracy: %.2f%%" % (correct * 100.0 / m )
+	print("Accuracy: %.2f%%" % (correct * 100.0 / m ))
 
 	
 def part1_1():

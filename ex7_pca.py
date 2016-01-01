@@ -73,7 +73,7 @@ def part2_2():
 
 
 	error = 1 - (sum( S[:1]) / sum( S))
-	print error
+	print(error)
 
 	mu = mu.reshape( 1, 2)[0]
 	mu_1 = mu + 1.5 * S[0] * U[:, 0]
@@ -100,7 +100,7 @@ def part2_3():
 
 	K = 1
 	Z = projectData( X_norm, U, K )
-	print Z[0] # Should be 1.481
+	print(Z[0]) # Should be 1.481
 
 	X_rec = recoverData( Z, U, K )
 

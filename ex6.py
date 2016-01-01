@@ -48,12 +48,12 @@ def visualizeBoundary( X, trained_svm ):
 def dataset3ParamsVer3( X, y, X_val, y_val ):
 	C_values 	 = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]
 	sigma_values = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]
-	gammas	 	 = map( lambda x: 1.0 / x, sigma_values )
+	gammas	 	 = [1.0 / x for x in sigma_values]
 	
 	raveled_y = y.ravel()
 
 	rbf_svm 	= svm.SVC()
-	parameters 	= {'kernel':('rbf', ), 'C':[0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30], 'gamma':map( lambda x: 1.0 / x, sigma_values ) }
+	parameters 	= {'kernel':('rbf', ), 'C':[0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30], 'gamma':[1.0 / x for x in sigma_values] }
 	grid 		= grid_search.GridSearchCV( rbf_svm, parameters )
 	best 		= grid.fit( X, raveled_y ).best_params_
 
@@ -155,7 +155,7 @@ def part1_2():
 	x2 = array([0, 4, -1])
 	sigma = 2
 
-	print "Gaussian kernel: %f" % gaussianKernel( x1, x2, sigma )
+	print("Gaussian kernel: %f" % gaussianKernel( x1, x2, sigma ))
 
 	mat = scipy.io.loadmat( "/Users/saburookita/Downloads/mlclass-ex6-004/mlclass-ex6/ex6data2.mat" )
 	X, y = mat['X'], mat['y']

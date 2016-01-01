@@ -23,7 +23,7 @@ def featureNormalizeLoop( data ):
 	for col in range( 0, shape(data)[1] ):
 		mu.append	( mean( data[:, col] ) )
 		sigma.append( std ( data[:, col], ddof=1 ) ) # if ddof = 0 sigma will be uncorrected sample standard deviation
-		data_norm[:, col] = map( lambda x: (x - mu[col]) / sigma[col], data[:, col] )
+		data_norm[:, col] = [(x - mu[col]) / sigma[col] for x in data[:, col]]
 		
 	return data_norm, array(mu), array( sigma )
 
@@ -66,9 +66,9 @@ def part3_1():
 	y = data[:, 2:3]
 
 	X, mu, sigma = featureNormalize( X )
-	print X
-	print mu
-	print sigma
+	print(X)
+	print(mu)
+	print(sigma)
 
 def part3_2():
 	data = genfromtxt( "/Users/saburookita/Downloads/mlclass-ex1-004/mlclass-ex1/ex1data2.txt", delimiter = ',' )
@@ -101,7 +101,7 @@ def part3_2():
 		test = array([1.0, 1650.0, 3.0])
 		# exclude intercept units
 		test[1:] = (test[1:] - mu) / sigma
-		print test.dot( theta )
+		print(test.dot( theta ))
 
 	
 def part3_3():
@@ -115,7 +115,7 @@ def part3_3():
 	theta = normalEquation( X, y )
 	# 1650 sq feet 3 bedroom house
 	test = array([1.0, 1650.0, 3.0])
-	print test.dot( theta )
+	print(test.dot( theta ))
 
 
 def main():

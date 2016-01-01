@@ -93,8 +93,8 @@ def part1_2():
 	X 			 = mat['X']
 
 	mu, sigma2 = estimateGaussian( X )
-	print mu
-	print sigma2
+	print(mu)
+	print(sigma2)
 
 	plot( X )
 	visualizeFit( X, mu, sigma2 )
@@ -130,8 +130,8 @@ def part1_4():
 	
 
 	f1, epsilon = selectThreshold( y_val, p_val )
-	print epsilon
-	print f1
+	print(epsilon)
+	print(f1)
 
 
 

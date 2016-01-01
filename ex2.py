@@ -80,13 +80,13 @@ def part1_2():
 	y 	  = data[:, n:n+1]
 	theta = zeros( (n+1, 1) ) 
 
-	print computeCost(theta, X, y)
+	print(computeCost(theta, X, y))
 	theta, cost = findMinTheta( theta, X, y )	
 	plotBoundary( data, X, theta )
 	pyplot.show()
 
 	test = array([1, 45, 85])
-	print predict( test, theta )
+	print(predict( test, theta ))
 
 def main():
 	set_printoptions(precision=6, linewidth=200)

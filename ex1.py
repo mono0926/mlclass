@@ -16,7 +16,7 @@ EX_DIRECTORY_PATH = '/Users/saburookita/Personal Projects/MachineLearningPy/'
 
 def part1():
     A = eye(5)
-    print A
+    print(A)
 
 
 def hypothesis(X, theta):
@@ -114,13 +114,13 @@ def part2_2():
 
     cost 	= computeCost(X, y, theta)  # should be 32.07
     theta 	= gradientDescent(X, y, theta, alpha, iterations)
-    print cost
-    print theta
+    print(cost)
+    print(theta)
 
     predict1 = array([1, 3.5]).dot(theta)
     predict2 = array([1, 7]).dot(theta)
-    print predict1
-    print predict2
+    print(predict1)
+    print(predict2)
 
     plot(X[:, 1], y)
     pyplot.plot(X[:, 1], X.dot(theta), 'b-')

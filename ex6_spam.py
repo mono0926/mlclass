@@ -89,21 +89,21 @@ def part2_3():
 
 	predictions = linear_svm.predict( X )
 	predictions = predictions.reshape( shape(predictions)[0], 1 )
-	print ( predictions == y ).mean() * 100.0
+	print(( predictions == y ).mean() * 100.0)
 
 	mat = scipy.io.loadmat( "/Users/saburookita/Downloads/mlclass-ex6-004/mlclass-ex6/spamTest.mat" )
 	X_test, y_test = mat['Xtest'], mat['ytest']
 
 	predictions = linear_svm.predict( X_test )
 	predictions = predictions.reshape( shape(predictions)[0], 1 )
-	print ( predictions == y_test ).mean() * 100.0
+	print(( predictions == y_test ).mean() * 100.0)
 
 	vocab_list = getVocabList()
-	reversed_vocab_list = dict( (v, k) for (k, v) in vocab_list.iteritems() )
+	reversed_vocab_list = dict( (v, k) for (k, v) in vocab_list.items() )
 	sorted_indices = argsort( linear_svm.coef_, axis=None )
 
 	for i in sorted_indices[0:15]:
-		print reversed_vocab_list[i]
+		print(reversed_vocab_list[i])
 
 def part2_4():
 	mat = scipy.io.loadmat( "/Users/saburookita/Downloads/mlclass-ex6-004/mlclass-ex6/spamTrain.mat" )
@@ -121,7 +121,7 @@ def part2_4():
 	word_indices = processEmail( email_contents )
 	features 	 = emailFeatures( word_indices ).transpose()
 
-	print linear_svm.predict( features )
+	print(linear_svm.predict( features ))
 
 
 

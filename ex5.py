@@ -146,7 +146,7 @@ def part1_2():
 
 	theta 			= array([[1, 1]]).T
 	
-	print computeCost( theta, c_[ones((shape(X)[0], 1)), X  ] , y, 1.0 )
+	print(computeCost( theta, c_[ones((shape(X)[0], 1)), X  ] , y, 1.0 ))
 
 def part1_3():
 	mat = scipy.io.loadmat( "/Users/saburookita/Downloads/mlclass-ex5-004/mlclass-ex5/ex5data1.mat" )
@@ -156,7 +156,7 @@ def part1_3():
 
 	theta 			= array([[1, 1]]).T
 	
-	print computeGradient( theta, c_[ones((shape(X)[0], 1)), X  ] , y, 1.0 )
+	print(computeGradient( theta, c_[ones((shape(X)[0], 1)), X  ] , y, 1.0 ))
 
 def part1_4():
 	mat = scipy.io.loadmat( "/Users/saburookita/Downloads/mlclass-ex5-004/mlclass-ex5/ex5data1.mat" )
@@ -207,7 +207,7 @@ def part3_1():
 	X_poly_val = X_poly_val / sigma
 	X_poly_val = c_[ones(( shape(X_poly_val)[0], 1)), X_poly_val]
 
-	print X_poly[0, :]
+	print(X_poly[0, :])
 
 	lamda = 0.0
 
@@ -249,7 +249,7 @@ def part3_2():
 	X_poly_val = X_poly_val / sigma
 	X_poly_val = c_[ones(( shape(X_poly_val)[0], 1)), X_poly_val]
 
-	print X_poly[0, :]
+	print(X_poly[0, :])
 
 	lamda = 1.0
 

@@ -100,11 +100,11 @@ def part1_1():
 	initial_centroids = array([[3, 3], [6, 2], [8, 5]])
 
 	idx = findClosestCentroids( X, initial_centroids )
-	print idx[0:3] # should be [1, 3, 2]
+	print(idx[0:3]) # should be [1, 3, 2]
 	
 	
 	centroids = computeCentroids( X, idx, K )
-	print centroids
+	print(centroids)
 	# should be 
 	# [[ 2.428301  3.157924]
 	#  [ 5.813503  2.633656]
@@ -130,7 +130,7 @@ def part1_3():
 
 	max_iters = 10
 	centroids = array([[3, 3], [6, 2], [8, 5]])
-	print kMeansInitCentroids( X, K ) # it's randomly one of the coordinates from X
+	print(kMeansInitCentroids( X, K )) # it's randomly one of the coordinates from X
 
 def part1_4():
 	A = scipy.misc.imread( "/Users/saburookita/Downloads/mlclass-ex7-004/mlclass-ex7/bird_small.png" )

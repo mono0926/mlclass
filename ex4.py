@@ -13,7 +13,7 @@ import matplotlib.mlab as mlaba
 
 from util import Util
 import timeit
-import cProfile, pstats, StringIO
+import cProfile, pstats, io
 
 def recodeLabel( y, k ):
 	m = shape(y)[0]
@@ -179,7 +179,7 @@ def checkNNGradients( lamda = 0.0 ):
 	gradient 	= nnCostFunction( nn_params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda )[1]
 	numgrad 	= computeNumericalGradient( nn_params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda )
 	diff = linalg.norm( numgrad - gradient ) / (linalg.norm( numgrad + gradient ))
-	print diff
+	print(diff)
 
 
 
@@ -214,7 +214,7 @@ def displayData( X, theta1 = None, theta2 = None ):
 			result_matrix.append( result )
 
 		result_matrix = array( result_matrix ).reshape( rows, cols ).transpose()
-		print result_matrix
+		print(result_matrix)
 
 	pyplot.show( )
 
@@ -249,8 +249,8 @@ def part1_3():
 
 	params = r_[theta1.T.flatten(), theta2.T.flatten()]
 
-	print computeGradient( params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda )
-	print computeCost( params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda )
+	print(computeGradient( params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda ))
+	print(computeCost( params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda ))
 
 def part1_4():
 	mat = scipy.io.loadmat( "/Users/saburookita/Downloads/mlclass-ex4-004/mlclass-ex4/ex4data1.mat" )
@@ -266,11 +266,11 @@ def part1_4():
 	lamda 				= 1
 
 	params = r_[theta1.T.flatten(), theta2.T.flatten()]
-	print computeCost( params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda )
+	print(computeCost( params, input_layer_size, hidden_layer_size, num_labels, X, y, lamda ))
 
 def part2_1():
-	print sigmoidGradient( 0 )
-	print sigmoidGradient( array([1, -0.5, 0, 0.5, 1]) )
+	print(sigmoidGradient( 0 ))
+	print(sigmoidGradient( array([1, -0.5, 0, 0.5, 1]) ))
 
 def part2_2():
 	theta1 = randInitializeWeights( 400, 25 )
@@ -294,8 +294,8 @@ def part2_3():
 	unraveled = r_[theta1.T.flatten(), theta2.T.flatten()]
 
 	J, theta = nnCostFunction( unraveled, input_layer_size, hidden_layer_size, num_labels, X, y.T, lamda )
-	print J
-	print theta
+	print(J)
+	print(theta)
 
 
 def part2_4():
@@ -313,7 +313,7 @@ def part2_4():
 
 	unraveled = r_[theta1.T.flatten(), theta2.T.flatten()]
 
-	print computeNumericalGradient( unraveled, input_layer_size, hidden_layer_size, num_labels, X, y, lamda )
+	print(computeNumericalGradient( unraveled, input_layer_size, hidden_layer_size, num_labels, X, y, lamda ))
 
 
 def part2_5():
@@ -331,7 +331,7 @@ def part2_5():
 
 	unraveled = r_[theta1.T.flatten(), theta2.T.flatten()]
 	J, theta = nnCostFunction( unraveled, input_layer_size, hidden_layer_size, num_labels, X, y.T, lamda )
-	print J
+	print(J)
 
 def part2_6():
 	mat = scipy.io.loadmat( "/Users/saburookita/Downloads/mlclass-ex4-004/mlclass-ex4/ex4data1.mat" )
@@ -354,7 +354,7 @@ def part2_6():
 	result = scipy.optimize.fmin_cg( computeCost, fprime=computeGradient, x0=unraveled, \
 									args=(input_layer_size, hidden_layer_size, num_labels, X, y, lamda, yk, X_bias), \
 									maxiter=50, disp=True, full_output=True )
-	print result[1]
+	print(result[1])
 	theta1, theta2 		= paramUnroll( result[0], input_layer_size, hidden_layer_size, num_labels )
 
 	displayData( X, theta1, theta2 )
@@ -365,7 +365,7 @@ def part2_6():
 		actual = y[i]
 		if( prediction == actual ):
 			counter+=1
-	print counter * 100 / m
+	print(counter * 100 / m)
 
 
 
