@@ -12,7 +12,7 @@ import scipy
 from matplotlib import pyplot, cm
 from mpl_toolkits.mplot3d import Axes3D
 
-EX_DIRECTORY_PATH = '/Users/saburookita/Personal Projects/MachineLearningPy/'
+EX_DIRECTORY_PATH = '/Users/mono/Documents/Git/Lib/mlclass/'
 
 def part1():
     A = eye(5)

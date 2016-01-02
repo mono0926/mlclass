@@ -61,7 +61,7 @@ def normalEquation( X, y ):
 
 
 def part3_1():
-	data = genfromtxt( "/Users/saburookita/Downloads/mlclass-ex1-004/mlclass-ex1/ex1data2.txt", delimiter = ',' )
+	data = genfromtxt( "/Users/mono/Documents/Git/Lib/mlclass/ex1data2.txt", delimiter = ',' )
 	X = data[:, 0:2]
 	y = data[:, 2:3]
 
@@ -71,7 +71,7 @@ def part3_1():
 	print(sigma)
 
 def part3_2():
-	data = genfromtxt( "/Users/saburookita/Downloads/mlclass-ex1-004/mlclass-ex1/ex1data2.txt", delimiter = ',' )
+	data = genfromtxt( "/Users/mono/Documents/Git/Lib/mlclass/ex1data2.txt", delimiter = ',' )
 	X = data[:, 0:2]
 	y = data[:, 2:3]
 	m = shape( X )[0]
@@ -105,7 +105,7 @@ def part3_2():
 
 	
 def part3_3():
-	data = genfromtxt( "/Users/saburookita/Downloads/mlclass-ex1-004/mlclass-ex1/ex1data2.txt", delimiter = ',' )
+	data = genfromtxt( "/Users/mono/Documents/Git/Lib/mlclass/ex1data2.txt", delimiter = ',' )
 	X = data[:, 0:2]
 	y = data[:, 2:3]
 	m = shape( X )[0]
