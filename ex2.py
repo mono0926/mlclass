@@ -65,7 +65,7 @@ def predict( theta, X, binary=True ):
 
 
 def part1_1():
-	data = genfromtxt( "/Users/saburookita/Downloads/mlclass-ex2-004/mlclass-ex2/ex2data1.txt", delimiter = ',' )
+	data = genfromtxt( "/Users/mono/Documents/Git/Lib/mlclass/octave/machine-learning-ex2/ex2/ex2data1.txt", delimiter = ',' )
 	m, n = shape( data )[0], shape(data)[1] - 1
 	X 	 = c_[ ones((m, 1)), data[:, :n] ]
 	y 	 = data[:, n:n+1]
@@ -74,7 +74,7 @@ def part1_1():
 	pyplot.show()
 	
 def part1_2():
-	data  = genfromtxt( "/Users/saburookita/Downloads/mlclass-ex2-004/mlclass-ex2/ex2data1.txt", delimiter = ',' )
+	data  = genfromtxt( "/Users/mono/Documents/Git/Lib/mlclass/octave/machine-learning-ex2/ex2/ex2data1.txt", delimiter = ',' )
 	m, n  = shape( data )[0], shape(data)[1] - 1
 	X 	  = c_[ ones((m, 1)), data[:, :n] ]
 	y 	  = data[:, n:n+1]
